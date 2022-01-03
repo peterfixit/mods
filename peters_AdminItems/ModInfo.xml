@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+        <Name value="peters_AdminItems" />
+        <Description value="Adds enhanced Admin Items into the game." />
+        <Author value="Peter" />
+        <Version value="A20" />
+    </ModInfo>
+</xml>

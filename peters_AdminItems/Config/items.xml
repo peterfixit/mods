@@ -1,0 +1,265 @@
+<peter>
+<!-- Written for the deaths door cluster of servers-->
+
+<append xpath="/items">
+
+
+
+<!-- ITEMS -->
+<item name="admin_Killer">
+	<property name="CreativeMode" value="Player"/>
+<!--	<property name="Extends" value="adminMaster" param1="CustomIcon"/> -->
+	<property name="CustomIcon" value="gunMGT2TacticalAR"/>
+	<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,barrelAttachments,sideAttachments,smallTopAttachments,mediumTopAttachments,largeTopAttachments,stock,magazine,firingMode,bottomAttachments,attPerception,perkDeadEye,canHaveCosmetic"/>
+	<property name="DisplayType" value="rangedGun"/>
+	<property name="HoldType" value="11"/>
+	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/SniperRifle/sniperRiflePrefab.prefab"/>
+	<property name="Material" value="MRifleParts"/>
+	<property name="SoundJammed" value="weapon_jam"/>
+	<property name="Attachments" value="meleeToolFlashlight02"/>
+	<property name="Sound_Sight_In" value="rifle_sight_in"/>
+	<property name="Sound_Sight_Out" value="rifle_sight_out"/>
+	<property name="LightSource" value="lightSource"/> <!-- Start: Needed for the attachment flashlight -->
+	<property name="ActivateObject" value="Attachments/flashlight/lightSource"/>
+	<property name="AttachmentFlashlight" value="meleeToolFlashlight02"/> <!-- End: Needed for the attachment flashlight -->
+	<property name="LightValue" value=".45"/>
+	<property name="CustomIconTint" value="FF0000"/>
+	<property name="UMA.Overlay0Tint" value="FF0000"/>
+	<property name="TintColor" value="FF0000"/>
+	<property class="Action0">
+		<property name="Class" value="Ranged"/>
+		<property name="Delay" value=".150"/> <!-- obsolete if rounds per minute exists -->
+		<property name="Magazine_items" value="ammo762mmBulletBall"/>
+		<property name="Reload_time" value="1.9"/>
+		<property name="Sound_start" value=""/>
+		<property name="Sound_loop" value=""/>
+		<property name="Sound_repeat" value=""/>
+		<property name="Sound_end" value=""/>
+		<property name="Sound_empty" value="dryfire"/>
+		<property name="Sound_reload" value="sniperrifle_reload"/>
+		<property name="Particles_muzzle_fire" value="nozzleflashuzi"/>
+		<property name="Infinite_ammo" value="true"/>
+		<property name="Single_magazine_usage" value="true"/>
+		<property name="Hitmask_override" value="Melee"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="Zoom"/>
+		<property name="Zoom_max_out" value="55"/>
+		<property name="Zoom_max_in" value="55"/>
+		<property name="ScopeCameraOffset" value="0,.0262,-.05"/>
+	</property>
+	<effect_group name="admin" tiered="false">
+		<passive_effect name="MaxRange" operation="base_set" value="500" />
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="500" />
+		<passive_effect name="EntityDamage" operation="base_set" value="50000" />
+		<passive_effect name="BlockDamage" operation="base_set" value="0" />
+
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="1000" />
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1000" />
+
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" /> <!-- 2.7s -->
+		<passive_effect name="ModSlots" operation="base_set" value="7" />
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0" />
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0" />
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value="0" />
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value="0" />
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="0" />
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="0" />
+
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0" />
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="0" />
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="0" />
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0" />
+
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="0" />
+		<passive_effect name="WeaponHandling" operation="base_set" value=".9" />
+
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" />
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" />
+	</effect_group>
+</item>
+<item name="admin_Digger">
+	<property name="CreativeMode" value="Player"/>
+<!--	<property name="Extends" value="adminMaster" param1="CustomIcon"/> -->
+	<property name="CustomIcon" value="gunMGT2TacticalAR"/>
+	<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,barrelAttachments,sideAttachments,smallTopAttachments,mediumTopAttachments,largeTopAttachments,stock,magazine,firingMode,bottomAttachments,attPerception,perkDeadEye,canHaveCosmetic"/>
+	<property name="DisplayType" value="rangedGun"/>
+	<property name="HoldType" value="11"/>
+	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/SniperRifle/sniperRiflePrefab.prefab"/>
+	<property name="Material" value="MRifleParts"/>
+	<property name="SoundJammed" value="weapon_jam"/>
+	<property name="Attachments" value="meleeToolFlashlight02"/>
+	<property name="Sound_Sight_In" value="rifle_sight_in"/>
+	<property name="Sound_Sight_Out" value="rifle_sight_out"/>
+	<property name="LightSource" value="lightSource"/> <!-- Start: Needed for the attachment flashlight -->
+	<property name="ActivateObject" value="Attachments/flashlight/lightSource"/>
+	<property name="AttachmentFlashlight" value="meleeToolFlashlight02"/> <!-- End: Needed for the attachment flashlight -->
+	<property name="LightValue" value=".45"/>
+	<property name="CustomIconTint" value="0000FF"/>
+	<property name="UMA.Overlay0Tint" value="0000FF"/>
+	<property name="TintColor" value="0000FF"/>
+	<property class="Action0">
+		<property name="Class" value="Ranged"/>
+		<property name="Delay" value=".150"/> <!-- obsolete if rounds per minute exists -->
+		<property name="Magazine_items" value="ammo762mmBulletBall"/>
+		<property name="Reload_time" value="1.9"/>
+		<property name="Sound_start" value=""/>
+		<property name="Sound_loop" value=""/>
+		<property name="Sound_repeat" value=""/>
+		<property name="Sound_end" value=""/>
+		<property name="Sound_empty" value="dryfire"/>
+		<property name="Sound_reload" value="sniperrifle_reload"/>
+		<property name="Particles_muzzle_fire" value="nozzleflashuzi"/>
+		<property name="Infinite_ammo" value="true"/>
+		<property name="Single_magazine_usage" value="true"/>
+		<property name="Hitmask_override" value="Melee"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="Zoom"/>
+		<property name="Zoom_max_out" value="55"/>
+		<property name="Zoom_max_in" value="55"/>
+		<property name="ScopeCameraOffset" value="0,.0262,-.05"/>
+	</property>
+	<effect_group name="admin" tiered="false">
+		<passive_effect name="MaxRange" operation="base_set" value="500" />
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="500" />
+		<passive_effect name="EntityDamage" operation="base_set" value="0" />
+		<passive_effect name="BlockDamage" operation="base_set" value="50000" />
+
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="1000" />
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1000" />
+
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" /> <!-- 2.7s -->
+		<passive_effect name="ModSlots" operation="base_set" value="7" />
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0" />
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0" />
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value="0" />
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value="0" />
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="0" />
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="0" />
+
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0" />
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="0" />
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="0" />
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0" />
+
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="0" />
+		<passive_effect name="WeaponHandling" operation="base_set" value=".9" />
+
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" />
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" />
+	</effect_group>
+</item>
+<item name="admin_Paintbrush">
+	<property name="CreativeMode" value="Player"/>
+<!--	<property name="Extends" value="adminMaster" param1="CustomIcon"/> -->
+	<property name="Tags" value="admin,noMods"/>
+	<property name="HoldType" value="51"/>
+	<property name="Meshfile" value="#Other/Items?Tools/PaintbrushPrefab.prefab"/>
+	<property name="CustomIcon" value="meleeToolPaintTool"/>
+	<property name="Material" value="Mwood"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="wooddestroy1"/>
+	<property class="Action0">
+		<property name="Class" value="TextureBlock"/>
+		<property name="Hitmask_override" value="Melee"/>
+		<property name="Sound_start" value="erase"/>
+		<property name="Infinite_ammo" value="true"/>
+		<property name="Magazine_items" value="resourcePaint"/>
+		<property name="Range" value="500"/>
+		<property name="Delay" value="0"/>
+		<property name="RemoveTexture" value="true"/>
+		<property name="DefaultTextureID" value="156"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="TextureBlock"/>
+		<property name="Hitmask_override" value="Melee"/>
+		<property name="Sound_start" value="resourcePaint"/>
+		<property name="Infinite_ammo" value="true"/>
+		<property name="Magazine_items" value="resourcePaint"/>
+		<property name="Range" value="500"/>
+		<property name="Delay" value="0"/>
+		<property name="Particles_muzzle_fire" value="paint_splash2"/>
+	</property>
+	<effect_group tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1000" />
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value="0"/>
+		<passive_effect name="SpreadMultiplierHip" operation="base_set" value="0"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
+	</effect_group>
+</item>
+<item name="admin_Nailgun">
+	<property name="CreativeMode" value="Player"/>
+<!--	<property name="Extends" value="adminMaster" param1="CustomIcon"/> -->
+	<property name="CustomIcon" value="meleeToolRepairT3Nailgun"/>
+	<property name="Tags" value="tool,nailgun,ranged,shortRange,barrelAttachments,sideAttachments,smallTopAttachments,magazine,firingMode,selfLoading,bottomAttachments,attAgility,perkGunslinger,admin,noMods"/>
+	<property name="DisplayType" value="meleeRepairTool"/>
+	<property name="HoldType" value="37"/>
+	<property name="Meshfile" value="#Other/Items?Tools/nailgunPrefab.prefab"/>
+	<property name="Material" value="MMotorToolParts"/>
+	<property name="SoundJammed" value="weapon_jam"/>
+	<property class="Action0">
+		<property name="Class" value="Ranged"/>
+		<property name="Hitmask_override" value="Melee"/>
+		<property name="Range" value="600"/>
+		<property name="Magazine_items" value="resourceNail"/>
+		<property name="Infinite_ammo" value="true"/>
+		<property name="Sound_start" value="nailgun_fire"/>
+		<property name="Sound_repeat" value="nailgun_fire"/>
+		<property name="Sound_end" value=""/>
+		<property name="Sound_empty" value="dryfire"/>
+		<property name="Sound_reload" value="nailgun_reload"/>
+		<property name="Particles_muzzle_fire" value="nailgunfire"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="Repair"/>
+		<property name="Delay" value="0"/>
+		<property name="Repair_amount" value="50000"/>
+		<property name="Upgrade_hit_offset" value="-10"/>
+		<property name="Repair_action_sound" value="nailgun_fire"/>
+		<property name="Upgrade_action_sound" value="nailgun_fire"/>
+		<property name="Allowed_upgrade_items" value="resourceWood,resourceClayLump,resourceSnowBall,resourceScrapIron,resourceForgedIron,resourceForgedSteel,resourceConcreteMix,resourceCobblestones,ironDoor1_v1,vaultDoor01,scrapHatch_v1,vaultHatch_v1,resourceYuccaFibers,resourceCloth,resourceScrapPolymers,resourceNail,steelPolish,admin_Material,"/>
+	</property>
+	<effect_group tiered="false">
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="100" />
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" /> <!-- random effective rng -->
+		<passive_effect name="MaxRange" operation="base_set" value="500" />
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value="0"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value="0"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="0"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="0"/>
+
+		<display_value name="dBlockRepairAmount" value="5000"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" />
+		<passive_effect name="WeaponHandling" operation="base_set" value="0" /> <!-- crosshair reset speed -->
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="1000" />
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1000" /> <!-- for the Launcher class this instantly fires BurstRoundCount projectiles on pulling the trigger -->
+		<passive_effect name="MagazineSize" operation="base_set" value="10"/>
+
+		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0" />
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="0" />
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="0" />
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0" />
+		<passive_effect name="DegradationMax" operation="base_set" value="9999" tags="nailgun"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="nailgun"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>
+</item>
+
+</append>
+
+<!-- HIDING DEV ITEMS FROM CREATIVE MENU -->
+<remove xpath="/items/item[@name='gunToolDiggerAdmin']" />
+<remove xpath="/items/item[@name='gunHandgunPistolAdmin']" />
+
+<!-- Written for A19 by shadow39. Updated and stripped for A20 by peter-->
+
+</peter>
