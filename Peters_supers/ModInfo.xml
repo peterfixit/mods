@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <ModInfo>
+        <Name value="Peters_supers" />
+        <Description value="Adds Super Weapons, Super Tools. Also adds the Token system for donors and subscribers" />
+        <Author value="peter" />
+        <Version value="A20" />
+    </ModInfo>
+
+</xml>

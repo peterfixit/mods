@@ -1,0 +1,34 @@
+<Wuhan_Weapons>
+
+
+
+<append xpath="/item_modifiers" >
+<item_modifier name="ADMINMAGEXTENDER" installable_tags="ADMINMAGEXTENDER" modifier_tags="magazine" blocked_tags="noMods" type="attachment">
+	<property name="CustomIcon" value="modGunDrumMagazineExtender"/>
+	<property name="CustomIconTint" value="125,249,255"/>
+	<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	<effect_group tiered="false">
+		<passive_effect name="MagazineSize" operation="perc_add" value="100"/>
+		<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="50"/>
+		<passive_effect name="AttributeLevel" tags="attStrength" operation="base_add" value="10"/>
+		<passive_effect name="PhysicalDamageResist" operation="base_add" value="300"/>
+		<passive_effect name="HypothermalResist" operation="base_add" value="130"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="20"/>
+		<passive_effect name="ElementalDamageResist" operation="base_add" value="100" tags="heat,electrical"/>
+		<passive_effect name="AttributeLevel" tags="attFortitude" operation="base_add" value="10"/>
+		<passive_effect name="AttributeLevel" tags="attAgility" operation="base_add" value="10"/>
+		<passive_effect name="StaminaChangeOT" operation="perc_add" value="50" tags="running"/><display_value name="dStaminaRegen" value="50"/>
+		<passive_effect name="EntityDamage" operation="base_add" value="-50"/>
+		<passive_effect name="RoundsPerMinute" operation="perc_add" value="90"/>
+		<passive_effect name="JumpStrength" operation="perc_add" value="2.5"/>
+		<passive_effect name="Mobility" operation="perc_add" value="100"/>
+		<passive_effect name="WalkSpeed" operation="base_set" value="1.65"/>
+		<passive_effect name="RunSpeed" operation="base_set" value="1.9"/>
+        <passive_effect name="BurstRoundCount" operation="base_set" value="999"/>
+		</effect_group>
+	</item_modifier>
+	</append>
+<!-- ===== [END]	Snufkin_Weapons_Xpansion_A19_2021July13	[END] ===== -->
+
+</Wuhan_Weapons>
