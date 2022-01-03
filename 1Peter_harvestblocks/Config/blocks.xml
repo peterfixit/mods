@@ -1,0 +1,281 @@
+<peter>
+ <append xpath="/blocks" >
+
+<!-- HARVEST BLOCKS -->
+<block name="harvestTerrStone">
+	<property name="CustomIcon" value="terrStone" />
+	<property name="CustomIconTint" value="FF0000" />
+	<property name="Material" value="Mstone"/><property name="NoScrapping" value="true"/>
+	<property name="Shape" value="Terrain"/>
+	<property name="Mesh" value="terrain"/>
+	<property name="Texture" value="1"/>
+	<property name="ImposterExclude" value="true"/>
+	<property name="LPHardnessScale" value="2"/>
+	<property name="Weight" value="125"/>
+	<property name="Map.Color" value="100,100,100"/>
+	<property name="DowngradeBlock" value="harvestTerrStone" />
+	<property class="RepairItems"> <property name="resourceCobblestones" value="6"/> </property>
+	<!-- <property name="HarvestOverdamage" value="true"/>  default=false; that was a super terrible idea. If a tool does 500 damage to a 100 HP block you get 5x the assigned harvest amount.  -->
+	<drop event="Harvest" name="resourceRockSmall" count="75" tag="oreWoodHarvest"/> <!--[Original:55]-->
+	<!-- <drop event="Harvest" name="resourceScrapIron" count="10" tag="oreWoodHarvest"/> -->
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+	<!-- <drop event="Fall" name="resourceScrapIron" count="20" prob="0.23" stick_chance="0"/> -->
+	<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+	<!-- Better to have fewer stacks with higher numbers for performance reasons. -->
+	<!-- With a stick chance fallen resources just get buried and fall off the earth. -->
+	<!-- Could maybe do "0.1" stick but it would quickly make the whole endeavor unfun. -->
+	<property name="CanMobsSpawnOn" value="false"/> <!-- BM and horde AI can ONLY spawn on these blocks, the minimum distance to any player is 30m -->
+	<property name="EconomicValue" value="5"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="FilterTags" value="fterrain"/>
+	<property name="SortOrder1" value="d0j0"/>
+	<property name="SortOrder2" value="0050"/>
+	<property name="DisplayType" value="blockTerrain"/>
+</block>
+
+<block name="harvestTerrSnow">
+	<property name="CustomIcon" value="terrSnow" />
+	<property name="CustomIconTint" value="FF0000" />
+	<property name="Material" value="Msnow"/><property name="NoScrapping" value="true"/>
+	<property name="Shape" value="Terrain"/>
+	<property name="Mesh" value="terrain"/>
+	<property name="Texture" value="6,569,569,569,569,569"/> <!-- 569: stone texture 1 with dirt sound -->
+	<property name="ImposterExclude" value="true"/>
+	<property name="Map.Color" value="230,230,255"/>
+	<property name="CanMobsSpawnOn" value="false"/>
+	<property name="DowngradeBlock" value="harvestTerrSnow" />
+	<!--property class="RepairItems"> <property name="resourceSnowBall" value="10"/> </property-->
+	<drop event="Harvest" name="resourceSnowBall" count="15" tag="oreWoodHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="terrSnow" count="1" prob="0.25" stick_chance="1"/>
+	<drop event="Fall" name="resourceSnowBall" count="22" prob="0.187" stick_chance="0"/>
+	<property name="EconomicValue" value="5"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="FilterTags" value="fterrain"/>
+	<property name="SortOrder1" value="d0k0"/>
+	<property name="SortOrder2" value="0050"/>
+	<property name="DisplayType" value="blockTerrainFertile"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+</block>
+
+<block name="harvestTerrSand">
+	<property name="DowngradeBlock" value="harvestTerrSand" />
+	<property name="CustomIcon" value="terrGravel" />
+	<property name="CustomIconTint" value="FF0000" />
+	<property name="Tags" value="terrGravel"/>
+	<property name="CustomIcon" value="terrGravel"/>
+	<property name="Material" value="Mgravel"/><property name="NoScrapping" value="true"/>
+	<property name="Shape" value="Terrain"/>
+	<property name="Mesh" value="terrain"/>
+	<property name="Texture" value="11"/>
+	<property name="ImposterExclude" value="true"/>
+	<property name="Group" value="Decor/Miscellaneous"/>
+	<property name="Map.Color" value="158,139,124"/>
+	<!-- gravel: 7 sand, 8 rocks  (1/2 the hit points of stone) -->
+	<drop event="Harvest" name="resourceCrushedSand" count="12" tag="oreWoodHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="resourceCrushedSand" count="23" prob="0.16" stick_chance="0"/>
+	<property name="CanMobsSpawnOn" value="false"/>
+	<property name="EconomicValue" value="20"/>
+	<property name="EconomicBundleSize" value="20"/>
+	<property name="FilterTags" value="fterrain"/>
+	<property name="SortOrder1" value="d0k0"/>
+	<property name="SortOrder2" value="0050"/>
+	<property name="DisplayType" value="blockTerrainFertile"/>
+</block>
+
+<block name="harvestTerrDirt">
+	<property name="DowngradeBlock" value="harvestTerrDirt" />
+	<property name="CustomIcon" value="terrDirt" />
+	<property name="CustomIconTint" value="FF0000" />
+	<property name="Material" value="Mdirt"/>
+	<property name="Shape" value="Terrain"/>
+	<property name="Mesh" value="terrain"/>
+	<property name="Texture" value="2"/>
+	<property name="ImposterExclude" value="true"/>
+	<property name="LPHardnessScale" value="2"/>
+	<property name="Map.Color" value="20,50,21"/>
+	<drop event="Harvest" name="resourceClayLump" count="50" tag="oreWoodHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="terrDirt" count="1" prob="0.25" stick_chance="1"/>
+	<drop event="Fall" name="resourceClayLump" count="44" prob="0.187" stick_chance="0"/>
+	<property name="CanMobsSpawnOn" value="false"/>
+	<property name="EconomicValue" value="5"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="FilterTags" value="fterrain"/>
+	<property name="SortOrder1" value="d0k0"/>
+	<property name="SortOrder2" value="0050"/>
+	<property name="DisplayType" value="blockTerrainFertile"/>
+</block>
+
+<block name="harvestTerrDestroyedWoodDebris">
+	<property name="DowngradeBlock" value="harvestTerrDestroyedWoodDebris" />
+	<property name="CustomIcon" value="terrDestroyedWoodDebris" />
+	<property name="CustomIconTint" value="FF0000" />
+	<property name="Extends" value="terrDestroyedStone" param1="Harvest"/>
+	<property name="Texture" value="438"/>
+	<property name="CustomIcon" value="terrDestroyedStone"/>
+	<property name="Material" value="Mwood_regular"/>
+	<property name="MaxDamage" value="30"/>
+	<property name="FuelValue" value="150"/>
+	<property name="ImposterExclude" value="true"/>
+	<drop event="Harvest" name="resourceCrushedSand" count="0" tag="oreWoodHarvest"/>
+	<drop event="Harvest" name="resourceRockSmall" count="0" tag="oreWoodHarvest"/>
+	<drop event="Harvest" name="resourceWood" count="10" tag="oreWoodHarvest"/>
+	<property name="Map.Color" value="110,95,49"/>
+	<property name="CanMobsSpawnOn" value="false"/>
+	<property name="FilterTags" value="MC_outdoor,SC_terrain,MC_building,SC_destruction"/>
+	<property name="DisplayType" value="blockTerrain"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+</block>
+
+<block name="harvestTerrOreIron">
+	<property name="DowngradeBlock" value="harvestTerrOreIron" />
+	<property name="CustomIcon" value="terrOreIron" />
+	<property name="CustomIconTint" value="FF0000" />
+	<property name="Material" value="MoreMetal"/>
+	<property name="Tags" value="ore,deepOre"/>
+	<property name="Shape" value="Terrain"/>
+	<property name="Mesh" value="terrain"/>
+	<property name="Texture" value="33"/>
+	<property name="ImposterExclude" value="true"/>
+	<drop event="Harvest" name="resourceScrapIron" count="135" tag="oreWoodHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="resourceScrapIron" count="150" prob="0.4" stick_chance="0"/>
+	<property name="CanMobsSpawnOn" value="false"/>
+	<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+	<property name="SortOrder1" value="d0l0"/>
+	<property name="SortOrder2" value="0050"/>
+	<property name="DisplayType" value="blockTerrain"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+</block>
+
+<block name="harvestTerrOreLead">
+	<property name="DowngradeBlock" value="harvestTerrOreLead" />
+	<property name="CustomIcon" value="terrOreLead" />
+	<property name="CustomIconTint" value="FF0000" />
+	<property name="Material" value="MoreMetal"/>
+	<property name="Tags" value="ore,deepOre"/>
+	<property name="Shape" value="Terrain"/>
+	<property name="Mesh" value="terrain"/>
+	<property name="Texture" value="316"/>
+	<property name="Weight" value="100"/>
+	<property name="ImposterExclude" value="true"/>
+	<drop event="Harvest" name="resourceScrapLead" count="60" tag="oreWoodHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="resourceScrapLead" count="50" prob="0.4" stick_chance="0"/>
+	<property name="CanMobsSpawnOn" value="false"/>
+	<property name="EconomicValue" value="5"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+	<property name="SortOrder1" value="d0l0"/>
+	<property name="SortOrder2" value="0050"/>
+	<property name="DisplayType" value="blockTerrain"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+</block>
+
+<block name="harvestTerrOreCoal">
+	<property name="DowngradeBlock" value="harvestTerrOreCoal" />
+	<property name="CustomIcon" value="terrOreCoal" />
+	<property name="CustomIconTint" value="FF0000" />
+	<property name="Material" value="MoreStone"/>
+	<property name="Tags" value="ore,deepOre,coalBurnedDmg"/>
+	<property name="Shape" value="Terrain"/>
+	<property name="Mesh" value="terrain"/>
+	<property name="Texture" value="34"/>
+	<property name="ImposterExclude" value="true"/>
+	<drop event="Harvest" name="resourceCoal" count="60" tag="oreWoodHarvest"/>
+	<drop event="Harvest" name="resourceCoal" count="15" tag="coalHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="resourceCoal" count="50" prob="0.4" stick_chance="0"/>
+	<property name="CanMobsSpawnOn" value="false"/>
+	<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+	<property name="SortOrder1" value="d0l0"/>
+	<property name="SortOrder2" value="0050"/>
+	<property name="DisplayType" value="blockTerrain"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+</block>
+
+<block name="harvestTerrOrePotassiumNitrate">
+	<property name="DowngradeBlock" value="harvestTerrOrePotassiumNitrate" />
+	<property name="CustomIcon" value="terrOrePotassiumNitrate" />
+	<property name="CustomIconTint" value="FF0000" />
+	<property name="Material" value="MoreStone"/>
+	<property name="Tags" value="ore,deepOre"/>
+	<property name="Shape" value="Terrain"/>
+	<property name="Mesh" value="terrain"/>
+	<property name="Texture" value="300"/>
+	<property name="ImposterExclude" value="true"/>
+	<drop event="Harvest" name="resourcePotassiumNitratePowder" count="60" tag="oreWoodHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="resourcePotassiumNitratePowder" count="50" prob="0.4" stick_chance="0"/>
+	<property name="CanMobsSpawnOn" value="false"/>
+	<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+	<property name="SortOrder1" value="d0l0"/>
+	<property name="SortOrder2" value="0050"/>
+	<property name="DisplayType" value="blockTerrain"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+</block>
+
+<block name="harvestTerrOreOilDeposit">
+	<property name="DowngradeBlock" value="harvestTerrOreOilDeposit" />
+	<property name="CustomIcon" value="terrOreOilDeposit" />
+	<property name="CustomIconTint" value="FF0000" />
+	<property name="Material" value="MoreStone"/>
+	<property name="Tags" value="ore,deepOre"/>
+	<property name="Shape" value="Terrain"/>
+	<property name="Mesh" value="terrain"/>
+	<property name="Texture" value="440"/>
+	<property name="ImposterExclude" value="true"/>
+	<property name="LPHardnessScale" value="2"/>
+	<property name="Map.Color" value="110,95,49"/>
+	<drop event="Harvest" name="resourceOilShale" count="15" tag="oreWoodHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="resourceOilShale" count="50" prob="0.4" stick_chance="0"/>
+	<property name="CanMobsSpawnOn" value="false"/>
+	<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+	<property name="SortOrder1" value="d0l0"/>
+	<property name="SortOrder2" value="0050"/>
+	<property name="DisplayType" value="blockTerrain"/>
+	<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+</block>
+
+<block name="harvestTerrBrass">
+	<property name="DowngradeBlock" value="harvestTerrBrass" />
+	<property name="CustomIcon" value="terrDirt" />
+	<property name="CustomIconTint" value="FF0000" />
+	<property name="Material" value="MoreMetal"/>
+	<property name="Tags" value="ore,deepOre"/>
+	<property name="Shape" value="Terrain"/>
+	<property name="Mesh" value="terrain"/>
+	<property name="Texture" value="33"/>
+	<property name="ImposterExclude" value="true"/>
+	<property name="LPHardnessScale" value="2"/>
+	<property name="Map.Color" value="20,50,21"/>
+	<drop event="Harvest" name="resourceScrapBrass" count="10" tag="oreWoodHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="terrDirt" count="1" prob="0.25" stick_chance="1"/>
+	<drop event="Fall" name="resourceScrapBrass" count="16" prob="0.187" stick_chance="0"/>
+	<property name="EconomicValue" value="5"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+	<property name="SortOrder1" value="d0k0"/>
+	<property name="SortOrder2" value="0050"/>
+	<property name="DisplayType" value="blockTerrainFertile"/>
+</block>
+
+
+
+ </append>
+
+
+
+
+
+</peter>
